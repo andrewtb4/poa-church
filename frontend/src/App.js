@@ -19,6 +19,7 @@ const Visit = React.lazy(() => import('./pages/Visit'));
 const Groups = React.lazy(() => import('./pages/Groups'));
 const Media = React.lazy(() => import('./pages/Media'));
 const Learn = React.lazy(() => import('./pages/Learn'));
+const Contact = React.lazy(() => import('./pages/Contact'));
 const Admin = React.lazy(() => import('./pages/Admin'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
