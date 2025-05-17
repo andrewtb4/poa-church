@@ -1,7 +1,7 @@
 // Builder.io configuration
 
 // Use a Builder.io space public API key (required)
-export const BUILDER_PUBLIC_API_KEY = 'YOUR_BUILDER_API_KEY';
+export const BUILDER_PUBLIC_API_KEY = process.env.REACT_APP_BUILDER_API_KEY || 'YOUR_BUILDER_API_KEY';
 
 // Define your content model names
 export const BUILDER_MODELS = {
