@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { BuilderComponent, builder } from '@builder.io/react';
-import { BUILDER_PUBLIC_API_KEY } from './builder-config';
+import { builder } from '@builder.io/react';
 
 // Initialize Builder with API key
 builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
@@ -10,7 +9,6 @@ builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
-import BuilderPage from './components/BuilderPage';
 
 // Lazy-loaded pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
@@ -30,7 +28,7 @@ function App() {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const href = this.getAttribute('href');
-        if (href !== '#') {
+        if (href !== '#' && document.querySelector(href)) {
           document.querySelector(href).scrollIntoView({
             behavior: 'smooth'
           });
@@ -60,9 +58,11 @@ function App() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.removeEventListener('click', function (e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
+          if (this.getAttribute('href') !== '#' && document.querySelector(this.getAttribute('href'))) {
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
         });
       });
       
@@ -85,7 +85,6 @@ function App() {
               <Route path="/learn" element={<Learn />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin" element={<Admin />} />
-              <Route path="/builder" element={<BuilderPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
