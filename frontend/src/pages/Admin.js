@@ -1,5 +1,6 @@
 import React from 'react';
 import MagicPatternsImporter from '../components/MagicPatternsImporter';
+import MagicPatternsDownloader from '../components/MagicPatternsDownloader';
 
 const AdminPage = () => {
   return (
@@ -27,6 +28,8 @@ const AdminPage = () => {
               Open Builder.io Editor
             </a>
           </div>
+          
+          <MagicPatternsDownloader />
           
           <MagicPatternsImporter />
           
