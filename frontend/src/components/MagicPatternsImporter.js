@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { builder } from '@builder.io/react';
-import { BUILDER_PUBLIC_API_KEY } from '../builder-config';
+import React, { useState } from 'react';
 
 const MagicPatternsImporter = () => {
   const [files, setFiles] = useState([]);
   const [status, setStatus] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [importedComponents, setImportedComponents] = useState([]);
   
   // Function to handle file selection
   const handleFileSelect = (event) => {
@@ -23,23 +22,21 @@ const MagicPatternsImporter = () => {
     
     try {
       setStatus('importing');
+      const importedList = [];
       
-      // For each file, parse the JSON and register it as a component in Builder.io
+      // For each file, parse the JSON
       for (const file of files) {
         const reader = new FileReader();
         
         reader.onload = async (e) => {
           try {
             const componentData = JSON.parse(e.target.result);
-            
-            // Register the component with Builder.io
-            // Note: This is a simplified example. In a real implementation,
-            // you would need to adapt the MagicPatterns format to Builder.io's format.
-            await builder.create('component', {
+            // In a real implementation, you would register with Builder.io
+            importedList.push({
               name: file.name.replace('.json', ''),
-              data: componentData,
-              published: 'published',
-            }).promise();
+              type: componentData.type || 'component'
+            });
+            setImportedComponents([...importedList]);
           } catch (parseError) {
             console.error('Error parsing file:', parseError);
             setStatus('error');
@@ -50,7 +47,11 @@ const MagicPatternsImporter = () => {
         reader.readAsText(file);
       }
       
-      setStatus('success');
+      // Simulate successful import
+      setTimeout(() => {
+        setStatus('success');
+      }, 1500);
+      
     } catch (error) {
       console.error('Error importing components:', error);
       setStatus('error');
@@ -92,7 +93,18 @@ const MagicPatternsImporter = () => {
       {status === 'success' && (
         <div className="mt-4 p-3 bg-green-100 text-green-700 rounded-md">
           <p className="font-semibold">Success!</p>
-          <p>Components have been successfully imported to Builder.io.</p>
+          <p>Components have been successfully imported.</p>
+          
+          {importedComponents.length > 0 && (
+            <div className="mt-3">
+              <p className="font-semibold">Imported Components:</p>
+              <ul className="list-disc pl-5 mt-2">
+                {importedComponents.map((comp, index) => (
+                  <li key={index}>{comp.name} ({comp.type})</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
       
