@@ -1,71 +1,25 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { builder } from '@builder.io/react';
 
-// Components
+// MagicPatterns Components
 import MegaMenuHeader from './components/MagicPatterns/MegaMenuHeader';
 import MagicFooter from './components/MagicPatterns/MagicFooter';
 import LoadingSpinner from './components/LoadingSpinner';
 
-// Lazy-loaded pages for better performance
-const Home = React.lazy(() => import('./pages/Home'));
-const Giving = React.lazy(() => import('./pages/Giving'));
-const Visit = React.lazy(() => import('./pages/Visit'));
-const Groups = React.lazy(() => import('./pages/Groups'));
-const Media = React.lazy(() => import('./pages/Media'));
-const Learn = React.lazy(() => import('./pages/Learn'));
-const Contact = React.lazy(() => import('./pages/Contact'));
-const Admin = React.lazy(() => import('./pages/Admin'));
-const NotFound = React.lazy(() => import('./pages/NotFound'));
+// Builder.io Components
+import BuilderPage from './components/BuilderPage';
+
+// Register MagicPatterns components with Builder.io
+import { registerMagicPatternsComponents } from './builder-magic-patterns';
+
+// Initialize Builder.io
+builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
+
+// Register MagicPatterns components
+registerMagicPatternsComponents();
 
 function App() {
-  useEffect(() => {
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-          document.querySelector(href).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Animation on scroll
-    const handleIntersection = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null,
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('.fade-in, .slide-up').forEach(element => {
-      observer.observe(element);
-    });
-
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {
-          e.preventDefault();
-          if (this.getAttribute('href') !== '#' && document.querySelector(this.getAttribute('href'))) {
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -73,15 +27,8 @@ function App() {
         <main className="flex-grow pt-16">
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/giving" element={<Giving />} />
-              <Route path="/visit" element={<Visit />} />
-              <Route path="/groups" element={<Groups />} />
-              <Route path="/media" element={<Media />} />
-              <Route path="/learn" element={<Learn />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="*" element={<NotFound />} />
+              {/* Route all paths to BuilderPage */}
+              <Route path="*" element={<BuilderPage />} />
             </Routes>
           </Suspense>
         </main>
