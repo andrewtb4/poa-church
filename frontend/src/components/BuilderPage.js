@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { builder, BuilderComponent } from '@builder.io/react';
 import { useLocation } from 'react-router-dom';
-import { BUILDER_PUBLIC_API_KEY, BUILDER_MODELS, registerBuilderComponents } from '../builder-config';
 import LoadingSpinner from './LoadingSpinner';
 
 // Initialize Builder with API key
-builder.init(BUILDER_PUBLIC_API_KEY);
-
-// Register custom components
-registerBuilderComponents(builder);
+builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
 
 const BuilderPage = () => {
   const location = useLocation();
@@ -23,7 +19,7 @@ const BuilderPage = () => {
       const urlPath = location.pathname;
       
       // Fetch content for current page
-      const pageContent = await builder.get(BUILDER_MODELS.PAGE, {
+      const pageContent = await builder.get('page', {
         url: urlPath === '/' ? '/' : urlPath,
       }).promise();
       
@@ -52,7 +48,7 @@ const BuilderPage = () => {
   // Render Builder.io content
   return (
     <BuilderComponent 
-      model={BUILDER_MODELS.PAGE} 
+      model="page"
       content={content} 
     />
   );
