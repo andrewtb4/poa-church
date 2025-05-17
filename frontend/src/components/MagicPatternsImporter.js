@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { builder } from '@builder.io/react';
-import { BUILDER_PUBLIC_API_KEY } from './builder-config';
+import { BUILDER_PUBLIC_API_KEY } from '../builder-config';
 
 const MagicPatternsImporter = () => {
   const [files, setFiles] = useState([]);
