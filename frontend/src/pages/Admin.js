@@ -1,6 +1,7 @@
 import React from 'react';
 import MagicPatternsImporter from '../components/MagicPatternsImporter';
 import MagicPatternsDownloader from '../components/MagicPatternsDownloader';
+import BuilderRegistration from '../components/BuilderRegistration';
 
 const AdminPage = () => {
   return (
@@ -28,6 +29,8 @@ const AdminPage = () => {
               Open Builder.io Editor
             </a>
           </div>
+          
+          <BuilderRegistration />
           
           <MagicPatternsDownloader />
           
