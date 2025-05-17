@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Hero from '../components/Hero';
+import HeroSection from '../components/MagicPatterns/HeroSection';
 
 const Home = () => {
   // Scroll to top when component mounts
@@ -22,15 +22,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Hero 
+      <HeroSection 
+        title="Join a Spirit-Filled Community in the Heart of Alexandria"
+        description="Welcome to The Pentecostals of Alexandria Where Lives Are Changed. Guide your community toward healing with step-by-step guidance to activate prayer ministries and form interest groups."
+        buttonText="Get Started Today"
+        buttonLink="/visit"
         backgroundImage="https://images.unsplash.com/photo-1478147427282-58a87a120781"
-        title="The Pentecostals of Alexandria"
-        subtitle="God is generous and so He calls us to be as well. What we do with what God has given us shows the world where our hearts are and helps proclaim the gospel."
-        ctaText="Upcoming Events"
-        ctaLink="/events"
-        secondaryCtaText="Join a POA Group"
-        secondaryCtaLink="/groups"
-        overlayOpacity={0.7}
       />
       
       {/* Worship Times Section */}
