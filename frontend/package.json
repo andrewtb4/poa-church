@@ -1,12 +1,19 @@
 {
-  "name": "frontend",
+  "name": "poa-church",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@builder.io/react": "^3.2.3",
+    "@builder.io/sdk": "^2.2.2",
+    "@headlessui/react": "^1.7.18",
     "axios": "^1.8.4",
     "cra-template": "1.2.0",
+    "framer-motion": "^11.0.12",
+    "gsap": "^3.12.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.8.1",
     "react-router-dom": "^7.5.1",
     "react-scripts": "5.0.1"
   },
