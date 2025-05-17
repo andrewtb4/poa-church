@@ -83,6 +83,7 @@ function App() {
               <Route path="/groups" element={<Groups />} />
               <Route path="/media" element={<Media />} />
               <Route path="/learn" element={<Learn />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/builder" element={<BuilderPage />} />
               <Route path="*" element={<NotFound />} />
