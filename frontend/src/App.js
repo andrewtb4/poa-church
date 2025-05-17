@@ -1,13 +1,15 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { builder } from '@builder.io/react';
+import { Builder } from '@builder.io/react';
+import { registerMagicPatternsComponents } from './builder-magic-patterns';
+import { MAGIC_PATTERNS_API_KEY } from './magic-patterns-config';
 
-// Initialize Builder with API key
-builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
+// Register MagicPatterns components with Builder.io
+registerMagicPatternsComponents();
 
 // Components
-import Header from './components/Header';
-import NewFooter from './components/NewFooter';
+import MegaMenuHeader from './components/MagicPatterns/MegaMenuHeader';
+import MagicFooter from './components/MagicPatterns/MagicFooter';
 import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy-loaded pages for better performance
@@ -73,7 +75,7 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <Header />
+        <MegaMenuHeader />
         <main className="flex-grow pt-16"> {/* Added padding-top to account for fixed header */}
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
@@ -89,10 +91,12 @@ function App() {
             </Routes>
           </Suspense>
         </main>
-        <NewFooter />
+        <MagicFooter />
       </div>
     </Router>
   );
 }
+
+export default App;
 
 export default App;
