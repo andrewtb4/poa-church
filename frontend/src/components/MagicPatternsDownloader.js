@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const MagicPatternsDownloader = () => {
   const [downloadStatus, setDownloadStatus] = useState('idle');
   const [importedComponents, setImportedComponents] = useState([]);
   
-  // The Google Drive folder ID from the shared link
-  const folderId = '1nb65wl8YcbVqHubI8CJ8IvbZh-SopOrI';
-  
-  // Function to fetch and download files from Google Drive
+  // Function to simulate downloading files from Google Drive
   const downloadComponents = async () => {
     try {
       setDownloadStatus('downloading');
       
-      // Note: In a real app, this would require proper Google Drive API integration
-      // This is a simplified example that would require server-side code for actual implementation
-      
-      // For demonstration purposes, we'll simulate downloading the components
-      // Normally, you would use the Google Drive API to list and download files
-      
+      // Simulate downloading the components
       setTimeout(() => {
         // Simulate successful download
         const simulatedComponents = [
@@ -84,7 +75,7 @@ const MagicPatternsDownloader = () => {
             ))}
           </ul>
           <p className="mt-4 text-sm text-gray-600">
-            These components are now available in Builder.io. Go to the Builder.io editor to use them in your content.
+            These components are now ready to be used. You can import them using the component importer below.
           </p>
         </div>
       )}
@@ -97,7 +88,7 @@ const MagicPatternsDownloader = () => {
       )}
       
       <p className="mt-6 text-sm text-gray-500">
-        Note: In a production environment, accessing files from Google Drive would require proper authentication and Google Drive API integration. This example is for demonstration purposes only.
+        Note: This is a demonstration of downloading components from Google Drive. In a production environment, you would implement proper Google Drive API integration for this functionality.
       </p>
     </div>
   );
