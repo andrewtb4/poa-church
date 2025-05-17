@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POA Church - Magic Patterns Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+        }
+    </style>
+</head>
+<body>
+    <!-- Header based on MagicPatterns component -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="h-10 w-10 bg-black rounded-full flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                            </svg>
+                        </div>
+                        <span class="text-lg font-semibold text-black">POA Church</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex">
+                    <ul class="flex space-x-8">
+                        <li class="relative">
+                            <a href="/visit" class="font-medium text-sm text-gray-700 hover:text-black">Visit</a>
+                        </li>
+                        <li class="relative">
+                            <a href="/groups" class="font-medium text-sm text-gray-700 hover:text-black">POA Groups</a>
+                        </li>
+                        <li class="relative">
+                            <a href="/media" class="font-medium text-sm text-gray-700 hover:text-black">Sermons</a>
+                        </li>
+                        <li class="relative">
+                            <a href="/giving" class="font-medium text-sm text-gray-700 hover:text-black">Give</a>
+                        </li>
+                        <li class="relative group">
+                            <a href="/learn" class="font-medium text-sm flex items-center text-gray-700 hover:text-black">
+                                Learn
+                                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </a>
+                            <div class="absolute left-0 top-full mt-2 w-48 rounded-md shadow-lg bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                <div class="py-1">
+                                    <a href="/learn/new-believers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">New Believers</a>
+                                    <a href="/learn/bible-studies" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bible Studies</a>
+                                    <a href="/learn/growth-track" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Growth Track</a>
+                                    <a href="/learn/leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Leadership</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="/subscribe" class="rounded-full border border-black px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100">Subscribe</a>
+                    <a href="/login" class="rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-opacity-90">Login</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden">
+                    <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section based on MagicPatterns component -->
+        <div class="relative w-full min-h-screen flex items-center">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1478147427282-58a87a120781')">
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="relative z-10 container mx-auto px-4 py-24">
+                <div class="max-w-3xl">
+                    <!-- Title -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8 text-white">
+                        Join a Spirit-Filled Community in the Heart of Alexandria
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-xl md:text-2xl mb-12 text-gray-200">
+                        Welcome to The Pentecostals of Alexandria Where Lives Are Changed. Guide your community toward healing with step-by-step guidance to activate prayer ministries and form interest groups.
+                    </p>
+
+                    <!-- CTA Button -->
+                    <div>
+                        <a href="/visit" class="inline-flex items-center rounded-full bg-white px-8 py-4 text-base md:text-lg font-semibold text-black shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black">
+                            Get Started Today
+                            <svg class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Builder.io & Magic Patterns Integration</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        This website demonstrates the integration of Magic Patterns components with Builder.io for the POA Church website.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-3">Magic Patterns Components</h3>
+                        <p class="text-gray-600 mb-4">
+                            We've implemented exact replicas of your Magic Patterns components, including the mega menu header, hero section, and footer.
+                        </p>
+                        <a href="/admin" class="text-blue-600 font-semibold hover:underline">
+                            View Admin Dashboard →
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-3">Builder.io Integration</h3>
+                        <p class="text-gray-600 mb-4">
+                            The components are registered with Builder.io using your API key: mp_live_3ZQaYjBfP47LCk4F2z9G8tZ8, allowing you to use them in Builder.io's content editor.
+                        </p>
+                        <a href="https://builder.io/content" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                            Open Builder.io Editor →
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-3">MagicPatterns Import</h3>
+                        <p class="text-gray-600 mb-4">
+                            Import your Magic Patterns components directly from Google Drive and register them with Builder.io with just a few clicks.
+                        </p>
+                        <a href="/admin" class="text-blue-600 font-semibold hover:underline">
+                            Import Components →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer based on MagicPatterns component -->
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-4 py-16">
+            <!-- Newsletter Subscription -->
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Subscribe To Our Newsletter</h2>
+                <div class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
+                    <input
+                        type="email"
+                        placeholder="Your Email*"
+                        class="rounded-full px-6 py-3 flex-grow bg-white text-black focus:outline-none"
+                    />
+                    <button
+                        type="submit"
+                        class="rounded-full bg-white text-black px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 mb-12" />
+
+            <!-- Footer Nav Sections -->
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Pages Column -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Pages</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/visit" class="text-gray-400 hover:text-white transition-colors">
+                                Visit POA
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/groups" class="text-gray-400 hover:text-white transition-colors">
+                                POA Groups
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media" class="text-gray-400 hover:text-white transition-colors">
+                                Media
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/giving" class="text-gray-400 hover:text-white transition-colors">
+                                Give
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quicklinks Column -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quicklinks</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/kids" class="text-gray-400 hover:text-white transition-colors">
+                                POA Kids
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/students" class="text-gray-400 hover:text-white transition-colors">
+                                Refuge Student Ministries
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/prayer" class="text-gray-400 hover:text-white transition-colors">
+                                Prayer Request
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Schedule Column -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Service Schedule</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-bold mb-2">SUNDAYS:</p>
+                            <p class="text-gray-400 mb-2">Sunday School - 9:00 AM</p>
+                            <p class="text-gray-400">Morning Worship - 10:00 AM</p>
+                        </div>
+                        <div>
+                            <p class="font-bold mb-2">WEDNESDAYS:</p>
+                            <p class="text-gray-400">POA Wednesday - 7:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Column -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Follow Us</h3>
+                    <div class="space-y-4">
+                        <a
+                            href="https://facebook.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center text-gray-400 hover:text-white transition-colors"
+                        >
+                            <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                            </svg>
+                            Facebook
+                        </a>
+                        <a
+                            href="https://instagram.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center text-gray-400 hover:text-white transition-colors"
+                        >
+                            <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.058-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.37-.058 4.041 0 2.67.01 2.986.058 4.04.045.976.207 1.505.344 1.858.181.466.398.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058 2.67 0 2.987-.01 4.04-.058.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041 0-2.67-.01-2.986-.058-4.04-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.048-1.37-.058-4.041-.058zm0 3.063a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 8.468a3.333 3.333 0 100-6.666 3.333 3.333 0 000 6.666zm6.538-8.469a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" />
+                            </svg>
+                            Instagram
+                        </a>
+                        <a
+                            href="https://youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center text-gray-400 hover:text-white transition-colors"
+                        >
+                            <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between text-sm text-gray-400">
+                <p>© 2023 The Pentecostals of Alexandria. All rights reserved.</p>
+                <div class="flex mt-4 md:mt-0 space-x-6">
+                    <a href="/privacy" class="hover:text-white transition-colors">
+                        Privacy Policy
+                    </a>
+                    <a href="/terms" class="hover:text-white transition-colors">
+                        Terms of Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
