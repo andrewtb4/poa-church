@@ -6,8 +6,8 @@ import { builder } from '@builder.io/react';
 builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
 
 // Components
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Header from './components/Header';
+import NewFooter from './components/NewFooter';
 import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy-loaded pages for better performance
@@ -73,8 +73,8 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
+        <Header />
+        <main className="flex-grow pt-16"> {/* Added padding-top to account for fixed header */}
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -89,10 +89,12 @@ function App() {
             </Routes>
           </Suspense>
         </main>
-        <Footer />
+        <NewFooter />
       </div>
     </Router>
   );
 }
+
+export default App;
 
 export default App;
