@@ -1,15 +1,16 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { BuilderComponent, builder } from '@builder.io/react';
+import { BUILDER_PUBLIC_API_KEY } from './builder-config';
 
-// Builder.io API key - would need to be replaced with your actual key
-// This is a placeholder key
-builder.init('YOUR_BUILDER_IO_API_KEY');
+// Initialize Builder with API key
+builder.init(BUILDER_PUBLIC_API_KEY);
 
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
+import BuilderPage from './components/BuilderPage';
 
 // Lazy-loaded pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
@@ -18,6 +19,7 @@ const Visit = React.lazy(() => import('./pages/Visit'));
 const Groups = React.lazy(() => import('./pages/Groups'));
 const Media = React.lazy(() => import('./pages/Media'));
 const Learn = React.lazy(() => import('./pages/Learn'));
+const Admin = React.lazy(() => import('./pages/Admin'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -80,6 +82,8 @@ function App() {
               <Route path="/groups" element={<Groups />} />
               <Route path="/media" element={<Media />} />
               <Route path="/learn" element={<Learn />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/builder" element={<BuilderPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
