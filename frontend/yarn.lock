@@ -1175,6 +1175,13 @@
     node-fetch "^2.6.1"
     prop-types "^15.7.2"
 
+"@builder.io/sdk-react@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@builder.io/sdk-react/-/sdk-react-4.2.0.tgz#375f1100b48550b8c821423f0d02a91c9c449cf7"
+  integrity sha512-noeeWDURGKjUfFcodJILlpwBiItypUWVlE5h8jbaGj4bnw7QEVLe+92EbqqZpNPt18fwERllfm7/2nbXaUxLfQ==
+  dependencies:
+    isolated-vm "^5.0.0"
+
 "@builder.io/sdk@6.0.9", "@builder.io/sdk@^6.0.9":
   version "6.0.9"
   resolved "https://registry.yarnpkg.com/@builder.io/sdk/-/sdk-6.0.9.tgz#ca0844df6d4861bad5c44aa2515896b09fb7e426"
