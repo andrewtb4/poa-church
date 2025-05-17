@@ -4,7 +4,7 @@ import { BuilderComponent, builder } from '@builder.io/react';
 import { BUILDER_PUBLIC_API_KEY } from './builder-config';
 
 // Initialize Builder with API key
-builder.init(BUILDER_PUBLIC_API_KEY);
+builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
 
 // Components
 import Navbar from './components/Navbar';
