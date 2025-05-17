@@ -3,8 +3,8 @@ import { builder, BuilderComponent } from '@builder.io/react';
 import { useLocation } from 'react-router-dom';
 import LoadingSpinner from './LoadingSpinner';
 
-// Initialize Builder with API key
-builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
+// No need to initialize Builder here as it's done in App.js
+// builder.init('7d7f0d54afce4d3e897cc56acdd6e36f');
 
 const BuilderPage = () => {
   const location = useLocation();
