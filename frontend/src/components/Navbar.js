@@ -69,6 +69,11 @@ const Navbar = () => {
               className={`nav-link ${scrolled ? 'text-poa-black' : 'text-white'} ${location.pathname === '/learn' ? 'font-bold' : ''}`}>
               Learn
             </Link>
+            <Link 
+              to="/contact" 
+              className={`nav-link ${scrolled ? 'text-poa-black' : 'text-white'} ${location.pathname === '/contact' ? 'font-bold' : ''}`}>
+              Contact
+            </Link>
           </div>
 
           {/* Action Buttons */}
