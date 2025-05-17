@@ -70,7 +70,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <MegaMenuHeader />
-        <main className="flex-grow pt-16"> {/* Added padding-top to account for fixed header */}
+        <main className="flex-grow pt-16">
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Home />} />
