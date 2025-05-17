@@ -1,11 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Builder } from '@builder.io/react';
-import { registerMagicPatternsComponents } from './builder-magic-patterns';
-import { MAGIC_PATTERNS_API_KEY } from './magic-patterns-config';
-
-// Register MagicPatterns components with Builder.io
-registerMagicPatternsComponents();
 
 // Components
 import MegaMenuHeader from './components/MagicPatterns/MegaMenuHeader';
@@ -96,5 +90,7 @@ function App() {
     </Router>
   );
 }
+
+export default App;
 
 export default App;
