@@ -148,6 +148,12 @@ const Navbar = () => {
             >
               Learn
             </Link>
+            <Link 
+              to="/contact" 
+              className={`block py-2 px-3 text-poa-black rounded-md ${location.pathname === '/contact' ? 'bg-gray-100 font-bold' : ''}`}
+            >
+              Contact
+            </Link>
             <div className="flex flex-col space-y-2 mt-4">
               <Link to="/subscribe" className="btn bg-white text-poa-black border border-poa-black">
                 Subscribe
